@@ -1,4 +1,4 @@
-"use strict"; //used new version JS
+"use sctrict"; //used new version JS
 
 a=15;
 console.log(a);
