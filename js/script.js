@@ -1,6 +1,6 @@
-"use sctrict"; //used new version JS
+/* "use sctrict"; */ //used new version JS
 
-a=15;
+/* a=15;
 console.log(a);
 
 let number = 5; //change
@@ -12,20 +12,41 @@ console.log(number);
 /* 
 ---------------------------------------
 */
-const obj = {
+/* const obj = {
     a: 50  
 };
 
 obj.a=15;
 
-console.log(obj.a);
+console.log(obj.a); */
 /* 
 ---------------------------------------
 */
-console.log(name);
+/* console.log(name);
 var name = 'Ivan';
 
 name = 'Alex';
 
 
-console.log(name);
+console.log(name); */ 
+
+const numberOfFilms = +prompt('How mach films did you see?', '');
+
+var personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt('What is last your film?', ''),
+      b = prompt('"How much point you do to film?"', ''),
+      c = prompt('"What is last your film?"', ''),
+      d = prompt('"How much point you do to film?"', '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
+console.log("Done!");
