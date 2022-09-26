@@ -6,7 +6,7 @@ console.log(a);
 let number = 5; //change
 const leftBorderWidth = 1; //like constant, but not
 
-number = 10;
+number = 15;
 
 console.log(number);
 /* 
