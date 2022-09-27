@@ -30,7 +30,18 @@ name = 'Alex';
 
 console.log(name); */ 
 
-const numberOfFilms = +prompt('How mach films did you see?', '');
+'use strict';
+
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('How mach films did you see?', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('How mach films did you see?', '');
+    }
+}
+
+start();
 
 var personalMovieDB = {
     count: numberOfFilms,
@@ -40,13 +51,54 @@ var personalMovieDB = {
     privat: false
 };
 
-const a = prompt('What is last your film?', ''),
-      b = prompt('"How much point you do to film?"', ''),
-      c = prompt('"What is last your film?"', ''),
-      d = prompt('"How much point you do to film?"', '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+
+function rememberMyFilms() {
+    for(let i=1; i<3; i++) {    
+        const a = prompt('What is last your film?', ''),
+              b = prompt('"How much point you do to film?"', '');
+    
+          if(a != null && a != '' && a.length<50 && b != null && b != '') {
+            personalMovieDB.movies[a] = b;
+          } else {
+            i--;
+          }
+    }
+}
+
+rememberMyFilms();
+
+function detectedPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log("Low");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+        console.log("Middle");
+    } else if (personalMovieDB.count > 30) {
+        console.log("High");
+    } else {
+        console.log("Error");
+    }
+}
+
+detectedPersonalLevel();
+
+function showDB(hidden) {
+    if(!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for (let i=1; i<4; i++) {
+        const genre = prompt(`Your favorite ganres #${i} is`);
+        personalMovieDB.genres[i-1] = genre;
+    }
+}
+
+writeYourGenres();
+
 
 console.log(personalMovieDB);
 console.log("Done!");
