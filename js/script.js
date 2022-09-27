@@ -99,6 +99,5 @@ function writeYourGenres() {
 
 writeYourGenres();
 
-
 console.log(personalMovieDB);
 console.log("Done!");
